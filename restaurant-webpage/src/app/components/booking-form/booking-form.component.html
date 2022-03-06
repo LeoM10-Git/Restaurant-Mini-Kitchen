@@ -1,0 +1,90 @@
+<div class="booking-form">
+  <div class="form-header">
+    <h1>  {{title}} </h1>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submitForm()" *ngIf="form">
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Name" formControlName="name">
+      <span class="form-label">Name</span>
+      <small *ngIf="form.get('name')?.hasError('required')">Name required</small>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" type="email" placeholder="Email Address" formControlName="email">
+          <span class="form-label">Email</span>
+          <small *ngIf="form.get('email')?.hasError('required')">Email required</small>
+          <small *ngIf="form.get('email')?.hasError('email')">Valid Email required</small>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" type="tel" placeholder="Phone number" formControlName="phoneNumber">
+          <span class="form-label">Phone</span>
+          <small *ngIf="form.get('phoneNumber')?.hasError('required')">Phone Number required</small>
+          <small *ngIf="form.get('phoneNumber')?.hasError('minlength') && !form.get('phoneNumber')?.hasError('pattern')">Phone Number at least 8 digits</small>
+          <small *ngIf="form.get('phoneNumber')?.hasError('pattern')">Phone Number is number only</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="no of guests" formControlName="guestNumber">
+          <span class="form-label">GUEST</span>
+          <small *ngIf="form.get('guestNumber')?.hasError('required')">No of guests required</small>
+          <small *ngIf="form.get('guestNumber')?.hasError('maxlength') && !form.get('guestNumber')?.hasError('pattern')"
+          >Not more than 10 pax</small>
+          <small *ngIf="form.get('guestNumber')?.hasError('pattern')">Number Only</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="no of adults" formControlName="adultNumber">
+          <span class="form-label">Adults</span>
+          <small *ngIf="form.get('adultNumber')?.hasError('required')">No of adults required</small>
+          <small *ngIf="form.get('adultNumber')?.hasError('maxlength') && !form.get('adultNumber')?.hasError('pattern')"
+          >Not more than 10 pax</small>
+          <small *ngIf="form.get('adultNumber')?.hasError('pattern')">Number Only</small>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="no of children" formControlName="childrenNumber">
+          <span class="form-label">Children</span>
+          <small *ngIf="form.get('childrenNumber')?.hasError('required')">No of children required</small>
+          <small *ngIf="form.get('childNumber')?.hasError('maxlength') && !form.get('childrenNumber')?.hasError('pattern')"
+          >Not more than 10 pax</small>
+          <small *ngIf="form.get('childrenNumber')?.hasError('pattern')">Number Only</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group ">
+          <input class="form-control datepicker " (ngModelChange)="changeDate($event)"
+                 bsDatepicker [bsConfig]="datePickerConfig" formControlName="date"
+          placeholder="Date">
+          <span class="form-label"><i class="fa fa-calendar fa-md"></i>Date</span>
+          <small *ngIf="form.get('date')?.hasError('required')">Date required</small>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <select class="form-control" formControlName="session">
+              <option value="" selected hidden>session</option>
+            <option *ngFor="let session of sessions; let i=index" [value]="session.time">{{session.time}}</option>
+          </select>
+          <span class="select-arrow"></span>
+          <small *ngIf="form.get('session')?.hasError('required')">Session required</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-btn" >
+      <button class="submit-btn" type="submit" [disabled]="form.invalid">{{ buttonText }}</button>
+    </div>
+  </form>
+</div>

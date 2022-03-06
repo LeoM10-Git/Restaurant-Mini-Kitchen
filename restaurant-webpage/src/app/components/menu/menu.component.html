@@ -1,0 +1,112 @@
+<div class="menu">
+  <div class="container">
+<div class="section-title">
+  <h2>Menu</h2>
+  <p>Check Our Tasty Menu</p>
+</div>
+
+<div class="row">
+  <div class="col-lg-12 d-flex justify-content-center">
+    <ul id="menu-filters">
+      <li (click)="filterAll()" class="filter-active">All</li>
+      <li (click)="filterStarters()">Starters</li>
+      <li (click)="filterSpecialty()">Salads</li>
+      <li (click)="filterSalads()">Specialty</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row menu-container">
+
+  <div class="col-lg-6 menu-item" *ngIf="starters">
+    <img src="/assets/images/menu/lobster-bisque.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Lobster Bisque</a><span>$5.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Lorem, deren, trataro, filede, nerada
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="specialty">
+    <img src="/assets/images/menu/bread-barrel.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Bread Barrel</a><span>$6.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Lorem, deren, trataro, filede, nerada
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="starters">
+    <img src="/assets/images/menu/cake.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Crab Cake</a><span>$7.95</span>
+    </div>
+    <div class="menu-ingredients">
+      A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="salads">
+    <img src="/assets/images/menu/caesar.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Caesar Selections</a><span>$8.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Lorem, deren, trataro, filede, nerada
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="specialty">
+    <img src="/assets/images/menu/tuscan-grilled.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Tuscan Grilled</a><span>$9.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="starters">
+    <img src="/assets/images/menu/mozzarella.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Mozzarella Stick</a><span>$4.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Lorem, deren, trataro, filede, nerada
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="salads">
+    <img src="/assets/images/menu/greek-salad.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Greek Salad</a><span>$9.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Fresh spinach, crisp romaine, tomatoes, and Greek olives
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="salads">
+    <img src="/assets/images/menu/spinach-salad.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Spinach Salad</a><span>$9.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+    </div>
+  </div>
+
+  <div class="col-lg-6 menu-item" *ngIf="specialty">
+    <img src="/assets/images/menu/lobster-roll.jpg" class="menu-img" alt="">
+    <div class="menu-content">
+      <a (click)="bookTablePage()">Lobster Roll</a><span>$12.95</span>
+    </div>
+    <div class="menu-ingredients">
+      Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+    </div>
+  </div>
+</div>
+  </div>
+</div>

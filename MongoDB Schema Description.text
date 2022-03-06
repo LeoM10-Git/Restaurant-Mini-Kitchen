@@ -1,0 +1,29 @@
+Model class for MongoDB Schema objects
+     BookingData
+     BookingSession
+
+BookingData: {
+     _id: String, //mongoose.Types.ObjectId
+     accountOwnerEmail: string,
+     bookingId: string,
+     name: string,
+     email: string,
+     phoneNumber: string,
+     guestNumber: number,
+     adultNumber: number,
+     childNumber: number,
+     date: string,
+     session: string, 
+     googleRangeId: number
+}
+
+BookingSession: {
+      _id: String, //mongoose.Types.ObjectId
+      date: string,
+      sessions: [
+           {
+                time: string,
+                availableTables: number
+           }
+      ] //List of SessionInfo
+}

@@ -1,0 +1,43 @@
+.brand-name {
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #E3BEC6;
+}
+
+.brand-name:hover {
+  color: #FDCEB9;
+}
+.book-a-table-btn {
+  margin: 0 0 0 15px;
+  border: 2px solid #cda45e;
+  border-radius: 50px;
+  padding: 8px 25px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+.book-a-table-btn:hover {
+  background: #cda45e;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navbar-nav li{
+  margin-left:10px;
+  margin-right:10px;
+}
+
+.navbar-nav a:hover{
+  color: #D8D2CB;
+}
+
+.account-page-link:hover{
+  cursor: pointer;
+}
+
+li i{
+  margin-left: 6px;
+}

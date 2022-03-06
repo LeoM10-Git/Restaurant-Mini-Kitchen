@@ -1,0 +1,9 @@
+database:
+     SQL, DigitalOcean
+     MongoDB, MongoDB Atlas
+
+Environment variables: 
+     SECRET_KEY  : The secret key for jwt token generation
+     MONGODB_PASSWORD
+     SQL_PASSWORD
+     MAIL_PASSWORD

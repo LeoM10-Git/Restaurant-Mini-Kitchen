@@ -1,0 +1,65 @@
+@import '../../../css/account-board-styles.css';
+
+.form-control {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.container {
+  margin-top: 5rem;
+}
+.container h3 {
+  font-size: 1.7rem;
+  font-family: Poppins-Bold, serif;
+  margin-top:2rem;
+  color: #7C99AC;
+}
+
+.form-group label{
+  font-family: Poppins-Regular, serif;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: center;
+  color: #808080;
+}
+
+.container button {
+  margin-top: 2rem;
+  padding: 8px 20px;
+  min-width: 160px;
+  height: 50px;
+  background-color: #CCD1E4;
+  border-radius: 25px;
+  border: 0;
+  font-family: Poppins-Regular, serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  outline: none !important;
+  border: none;
+}
+
+.container button:hover{
+  background-color: #7C99AC;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+small {
+  color: #fb771a;
+}
+
+
+.updatedDetails{
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .form-control {
+    width: 100%;
+  }
+}

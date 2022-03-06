@@ -1,0 +1,126 @@
+
+p {
+  color: #b3b3b3;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, small{
+  font-family: "Roboto", sans-serif;
+}
+
+small {
+  color: #fb771a;
+}
+
+
+a:hover {
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.half, .half .container .row {
+  height: 90vh;
+  min-height: 600px;
+}
+
+@media (max-width: 1000px) {
+  .half .bg {
+    height: 200px; }
+}
+
+.half .contents, .half .bg {
+  width: 50%;
+}
+
+@media (max-width: 1200px) {
+  .half .contents, .half .bg {
+    width: 100%; }
+}
+
+.half .contents .form-group {
+  margin-bottom: 1rem;
+}
+
+.half .contents .form-control{
+  border: none;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0.1, 0.1);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0.1, 0.1);
+  border-radius: 10px;
+  height: 54px;
+  background: #fff;
+  margin-bottom: 0.1rem;
+  margin-top: 0.3rem;
+  padding: 12px 50px;
+  display: inline-block;
+}
+
+.half .bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.half a {
+  color: #74959A;
+  text-decoration: underline;
+}
+
+.half .btn {
+  height: 54px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.btn-primary{
+  background-color: #fb771a;
+  border-color: #fb771a;
+}
+
+.btn-block{
+  width: 100%;
+}
+
+.btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/*Remember me check box*/
+.form-check-label{
+  position: relative;
+  color: #888;
+  left: 0.3rem;
+}
+
+.checkbox-warning-filled .filled-in {
+  cursor: pointer;
+}
+.checkbox-warning-filled :checked{
+  border-color: #fb771a;
+  background-color: #fb771a;
+}
+.checkbox-warning-filled :focus {
+  box-shadow: 0 0 0;
+  border-color: #fb771a;
+}
+
+/*Login*/
+/*input style*/
+.warp-input {
+  position: relative;
+}
+
+.warp-input i{
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  color: gray;
+}
+/*icons color when input field is focused*/
+input:focus + .fa{
+  color:  #fb771a;
+}

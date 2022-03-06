@@ -1,0 +1,110 @@
+<div class="centered-content d-flex justify-content-center align-items-center">
+  <div class="account-manager-container d-flex">
+     <app-account-sidebar></app-account-sidebar>
+    <!--Right side panel-->
+    <div class="right-side-panel-container d-flex flex-column">
+      <!--Booking Management component-->
+  <!--    *ngIf="bookings"-->
+      <div class="booking-manager-container">
+          <div *ngIf="bookings" >
+
+            <div class="dropdown d-flex justify-content-end">
+              <button class="btn dropdown-button" type="button"
+                      id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-search fa-lg"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" (click)="sortForHistory()">History</a></li>
+                <li><a class="dropdown-item" (click)="sortActiveBooking()">Active</a></li>
+              </ul>
+            </div>
+
+            <!--Card-->
+            <!--ActiveBookings-->
+            <div *ngIf="!sortForHistoryBookings"  class="row">
+            <div class="card" *ngFor="let booking of activeBookings; let i=index">
+              <!--provide random image for the booking card background-->
+              <img src="{{imagePath[i % 5]}}" class="card-img-top" alt="..." height="50%">
+              <div class="card-body">
+                <h5 class="card-title">Name: {{booking.name}}</h5>
+                <p class="card-text">Date: {{ booking.date | date: 'YYYY-MM-dd'}} </p>
+                <p class="card-text">Session: {{ booking.session }}</p>
+                <div class="d-flex flex-row align-items-center justify-content-between">
+                  <a href="#" class="edit-button update-button" data-bs-toggle="modal"
+                     data-bs-target="#exampleModal" (click)="editBooking(booking)">
+                    <i class="fa fa-pencil-square fa-lg"></i>
+                  </a>
+                  <a class="edit-button delete-button">
+                    <i class="fa fa-trash-o fa-lg" (click)="deleteBooking(booking.bookingId)"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <!--History Bookings-->
+            <div *ngIf="sortForHistoryBookings"  class="row">
+            <div class="card" *ngFor="let booking of historyBookings; let i=index">
+              <!--provide random image for the booking card background-->
+              <img src="{{imagePath[i % 5]}}" class="card-img-top" alt="..." height="50%">
+              <div class="card-body">
+                <h5 class="card-title">Name: {{booking.name}}</h5>
+                <p class="card-text">Date: {{ booking.date | date: 'YYYY-MM-dd'}} </p>
+                <p class="card-text">Session: {{ booking.session }}</p>
+                <div class="d-flex flex-row align-items-center justify-content-between">
+                  <a href="#" class="edit-button update-button" data-bs-toggle="modal"
+                     data-bs-target="#exampleModal" (click)="editBooking(booking)">
+                    <i class="fa fa-pencil-square fa-lg"></i>
+                  </a>
+                  <a class="edit-button delete-button">
+                    <i class="fa fa-trash-o fa-lg" (click)="deleteBooking(booking.bookingId)"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            </div>
+            <!--End of card component-->
+            <div class="empty-state-text" *ngIf="activeBookings.length === 0 && bookings.length !== 0">
+              <h3 >
+                There are no active bookings here! Start booking a table with us
+              </h3>
+              <br>
+              <h3>
+                You can check your history booking as well
+              </h3>
+            </div>
+            <div class="empty-state-text" *ngIf="historyBookings.length === 0 && sortForHistoryBookings " >
+              <h3>
+                There are no history bookings here!
+              </h3>
+            </div>
+            <div class="empty-state-text" *ngIf="bookings.length === 0 && !sortForHistoryBookings" >
+              <h3>
+                There are no bookings here!
+              </h3>
+              <h3>
+                Start <a routerLink="/book-table">booking a table</a> with us!
+              </h3>
+            </div>
+          </div>
+
+        <!--Modal section-->
+        <!-- Button trigger modal -->
+        <div class="modal fade" id="exampleModal" tabindex="0" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <app-booking-form [title]="title" [buttonText]="buttonText"
+                                [booking]="bookingForm" (onSubmit)="updateBooking($event)">
+
+              </app-booking-form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <!--End of modal section-->
+
+      <!--End of Right side panel-->
+    </div>
+  </div>
+</div>

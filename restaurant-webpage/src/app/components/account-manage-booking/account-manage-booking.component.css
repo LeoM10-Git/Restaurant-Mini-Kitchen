@@ -1,0 +1,135 @@
+@import '../../../css/account-board-styles.css';
+
+
+.modal-content, .modal-dialog{
+  border-radius: 20px;
+  max-width: 642px;
+  border: 0;
+}
+
+.modal-content::before{
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.booking-manager-container {
+  margin: 10px 0 0 0;
+}
+
+.booking-manager-container .row .card {
+  padding: 0;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .booking-manager-container {
+    margin: 50px auto;
+  }
+  .booking-manager-container .row .card {
+   margin: 20px auto;
+  }
+}
+.card {
+  border-radius:20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 10px 20px 10px;
+  width: 18rem;
+}
+.card img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-body h5, p {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+.card-body p{
+  line-height: 1 !important;
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card-body h5 {
+  font-size: 1.2rem;
+}
+
+.card-body a{
+  margin-top: 10px;
+}
+
+.edit-button {
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  width: 45px;
+  height: 45px;
+  margin: 5px 30px 5px 30px;
+  border-radius: 50%;
+}
+
+.update-button {
+  background-color: #96BAFF;
+}
+.delete-button {
+  background-color: #DA7F8F;
+}
+
+.update-button:hover {
+  background-color: #93B5C6;
+  box-shadow: 0px 0px 17px 2px rgba(0,0,0,0.4);
+}
+
+.delete-button:hover {
+  background-color: #FF5677;
+  box-shadow: 0px 0px 17px 4px rgba(202, 105, 156, 0.5);
+  cursor: pointer;
+}
+
+.empty-state-text{
+  margin-top: 20px;
+  font-size: 1.5rem;
+  color: #777;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.card:hover{
+  box-shadow: 0 0 0 5px #FFF1CE;
+  cursor: pointer;
+}
+
+.top-bar {
+  margin-bottom: 20px;
+  display: flex;
+}
+
+
+/*dropdown*/
+.dropdown-button {
+  background-color: #F2C9E1;
+  color: #fff;
+}
+.dropdown-button:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  font-family: "Poppins Regular", sans-serif;
+  color: #fff;
+}
+.dropdown-item {
+  color: #203239;
+}
+.dropdown-menu :active {
+  background-color: #fff !important;
+}
+
+.dropdown-menu :hover {
+  cursor: pointer;
+}

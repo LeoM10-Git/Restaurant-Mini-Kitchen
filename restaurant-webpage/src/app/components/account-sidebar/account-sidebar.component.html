@@ -1,0 +1,30 @@
+<div class="d-flex flex-column sidebar">
+  <div class="d-flex flex-grow-1 flex-column">
+<h1 class="page-title">
+    Account
+  </h1>
+  <div class="sidebar-option d-flex flex-column ">
+    <a class="sidebar-option-item d-flex" routerLink="/my-account">
+      Dashboard
+    </a>
+    <a class="sidebar-option-item d-flex" routerLink="/my-account/booking" routerLinkActive="is-active">
+      Bookings
+    </a>
+    <a class="sidebar-option-item d-flex" routerLink="/my-account/details" routerLinkActive="is-active">
+      Account details
+    </a>
+    <a class="sidebar-option-item d-flex" routerLink="/my-account/contact-us" routerLinkActive="is-active">
+      Contact Us
+    </a>
+   </div>
+  </div>
+
+
+    <button class="btn logout-button d-flex justify-content-center align-items-center" (click)="logout()">
+      <i class="fa fa-arrow-left fa-lg"></i>Logout
+    </button>
+
+  </div>
+
+
+

@@ -1,0 +1,5 @@
+@import '../../../css/sign-login-page-style.css';
+
+.bg{
+  background-image: url('/assets/images/sign-up.jpeg');
+}

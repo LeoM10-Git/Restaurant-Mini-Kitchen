@@ -1,0 +1,28 @@
+.map{
+  margin: 30px auto 30px;
+  overflow:auto;
+  position:relative;
+  text-align:center;
+  width:80%;
+  height:450px;
+}
+
+.info-container {
+  width:80%;
+  margin: 0 auto 6rem;
+}
+
+.operation-detail {
+  margin-left: 80px;
+}
+
+@media screen and (max-width: 600px) {
+  .info-container{
+    flex-direction: column;
+  }
+  .operation-detail {
+    margin-top: 30px;
+    margin-left:0;
+  }
+}
+

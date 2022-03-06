@@ -1,0 +1,23 @@
+@import '../../../css/account-board-styles.css';
+
+.container h3, p {
+  font-family: "Raleway", sans-serif;
+}
+
+.container h3{
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #F4ABC4;
+}
+
+.container p {
+  line-height: 1;
+  color: #808080;
+  font-size: 1rem;
+}
+
+.container a:hover{
+  font-weight: bold;
+  font-size: 1.2rem;
+}

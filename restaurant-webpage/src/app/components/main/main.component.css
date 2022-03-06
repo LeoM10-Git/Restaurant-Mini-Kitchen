@@ -1,0 +1,85 @@
+.main-page {
+  width: 100%;
+  height: 90vh;
+  min-height: 900px;
+  overflow: auto;
+  background: url("/assets/images/main-page-background.jpg") top center;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+.main-page:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-page h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+.main-page h1 span {
+  color: #cda45e;
+}
+.main-page h2 {
+  color: #eee;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.main-page .btns {
+  margin-top: 30px;
+}
+.main-page .btn-menu, .main-page .btn-book {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+}
+.main-page .btn-menu:hover, .main-page .btn-book:hover {
+  background: #cda45e;
+  color: #fff;
+  cursor: pointer;
+}
+.main-page .btn-book {
+  margin-left: 15px;
+}
+
+@media (min-width: 1024px) {
+  .main-page {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 992px) {
+  .main-page .play-btn {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-page h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .main-page h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+
+

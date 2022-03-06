@@ -1,0 +1,22 @@
+[
+        {
+            "question": "What's your operation hours",
+            "answer": "We open from 12pm to 9pm from Monday to Sunday, except public holidays. You are welcome to to book a table with us."
+        },
+        {
+            "question": "Where you located?",
+            "answer": "25 Heng Mui Keng Terrace, SG 119615, Singapore. We are just inside the NUS ISS."
+        },
+        {
+            "question": "Can I cancel or change my booking?",
+            "answer": "Yes, you are welcome to make change to your bookings. Just login as our member to manage your bookings and account information."
+        },
+        {
+            "question": "What payment method do you accept?",
+            "answer": "We accept Visa, MasterCard, Grabpay, Paynow, all welcome. More payment method will be available soon."
+        },
+        {
+            "question": "Do you just serve western food?",
+            "answer": "Mostly we serve western food as our menu items, but we also come for some asian serving for specials, you are welcome to explore with us."
+        }
+    ]

@@ -1,0 +1,18 @@
+<div class="centered-content d-flex justify-content-center align-items-center">
+  <div class="account-manager-container d-flex flex-row">
+      <app-account-sidebar></app-account-sidebar>
+
+    <div class="right-side-panel-container d-flex flex-column">
+      <div class="container mt-5">
+        <h3>Hello, &nbsp;{{ name | titlecase }}</h3>
+        <p>From your account dashboard
+          <p>you can view your recent <a routerLink="/my-account/booking">bookings</a></p>
+          <p>manage your <a routerLink="/my-account/booking">bookings</a></p>
+          <p>edit your <a routerLink="/my-account/details">account details</a>, update password</p>
+          <p>and <a routerLink="/my-account/contact-us">send us</a> any comments if you have any questions
+            or reviews after visit</p>
+      </div>
+    </div>
+
+  </div>
+</div>

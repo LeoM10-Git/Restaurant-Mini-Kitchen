@@ -1,0 +1,64 @@
+<div class="centered-content d-flex justify-content-center align-items-center">
+  <div class="account-manager-container d-flex">
+    <app-account-sidebar></app-account-sidebar>
+
+    <div class="right-side-panel-container d-flex flex-column">
+      <!--Contact Us form-->
+
+      <div class="wrap-contact bg-light">
+        <div class="contact-form-title d-flex flex-column align-items-center flex-wrap">
+				<span class="contact-form-title-1">
+					Contact Us
+				</span>
+
+          <span class="contact-form-title-2">
+					Feel free to drop us a line below!
+				</span>
+        </div>
+
+        <form class="contact-form d-flex flex-wrap justify-content-center"
+        [formGroup]="form" (ngSubmit)="sendFeedback()">
+          <div class="wrap-input-group">
+            <span class="label-input-group">Full Name:</span>
+            <input class="input-group" type="text" name="name" placeholder="Enter full name"
+            formControlName="name">
+            <small *ngIf="form.get('name')?.hasError('required')">Name required</small>
+          </div>
+
+          <div class="wrap-input-group " >
+            <span class="label-input-group">Email:</span>
+            <input class="input-group" type="text" name="email" placeholder="Enter email address"
+            formControlName="email">
+          </div>
+
+          <div class="wrap-input-group ">
+            <span class="label-input-group">Phone:</span>
+            <input class="input-group" type="text" name="phone" placeholder="Enter phone number"
+            formControlName="phoneNumber">
+          </div>
+
+          <div class="wrap-input-group">
+            <span class="label-input-group">Message:</span>
+            <textarea class="input-group" name="message" placeholder="Your Comment..."
+            formControlName="message"></textarea>
+            <small *ngIf="form.get('message')?.hasError('required')">Message required</small>
+          </div>
+          <small *ngIf="sent">Feedback sent, thanks for your feedback</small>
+          <div class="container-contact-form-btn mt-2">
+            <button class="contact-form-btn d-flex flex align-items-center justify-content-center"
+            [disabled]="form.invalid">
+						<span>
+							Submit
+							<i class="fa fa-mail-forward fa-lg" aria-hidden="true"></i>
+						</span>
+            </button>
+
+          </div>
+        </form>
+      </div>
+
+    <!--End of form-->
+    </div>
+
+  </div>
+</div>
