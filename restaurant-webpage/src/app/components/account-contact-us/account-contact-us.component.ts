@@ -27,7 +27,6 @@ export class AccountContactUsComponent implements OnInit {
   sendFeedback() {
     this.service.sendFeedback(this.form.value).then((response) => {
       if (response) {
-        console.log(response);
         this.sent = true;
         this.form.reset();
       }

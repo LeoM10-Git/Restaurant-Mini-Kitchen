@@ -50,11 +50,13 @@
           formControlName="confirmPassword">
           <small *ngIf="info">Confirm password is not matching with your new password</small>
           <small class="updatedDetails" *ngIf="updated">Account details are updated, please login again</small>
+          <small class="updatedDetails" *ngIf="wrongPassword">Current password is not correct</small>
         </div>
 
 
         <button type="submit" class="btn btn-primary"
-                [disabled]="form.invalid || !(form.get('name')?.dirty || form.get('email')?.dirty)">
+                [disabled]="form.invalid ||
+                (!(form.get('name')?.dirty || form.get('email')?.dirty) && !form.get('currentPassword')?.value)">
           Save Changes
         </button>
       </form>

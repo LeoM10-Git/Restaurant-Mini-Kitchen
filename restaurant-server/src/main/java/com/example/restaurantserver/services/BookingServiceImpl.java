@@ -2,10 +2,8 @@ package com.example.restaurantserver.services;
 
 import com.example.restaurantserver.models.BookingData;
 import com.example.restaurantserver.repos.BookingRepo;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;

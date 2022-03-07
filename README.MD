@@ -21,9 +21,9 @@ It's a website project for Restaurant-Mini Kitchen, for user account, booking ma
 
 ### Features
 
-* User friendly webpage
+* User friendly webpage, responsive website for mobile device.
 * Registration/login, user account management.
-* Booking making, management.
+* Restaurant booking service, booking management.
 * Email service for user registration, booking making and contact restaurant for feedback.
 * User data saved in SQL database, booking data saved in MongoDB database.
 * Google spreadsheet to store data, update data record accordingly.

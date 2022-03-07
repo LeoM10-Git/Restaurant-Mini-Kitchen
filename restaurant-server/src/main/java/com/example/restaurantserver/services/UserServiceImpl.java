@@ -1,6 +1,7 @@
 package com.example.restaurantserver.services;
 
 
+import com.example.restaurantserver.models.BookingData;
 import com.example.restaurantserver.models.UpdateUserInfo;
 import com.example.restaurantserver.models.UserData;
 import com.example.restaurantserver.models.UserRole;
@@ -8,6 +9,10 @@ import com.example.restaurantserver.repos.RoleRepo;
 import com.example.restaurantserver.repos.UserRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -25,6 +30,7 @@ import java.util.*;
 public class UserServiceImpl implements UserService, UserDetailsService {
     private final UserRepo userRepo;
     private final RoleRepo roleRepo;
+    private final MongoTemplate mongoTemplate;
     private final PasswordEncoder passwordEncoder;
 
     @Override
@@ -38,21 +44,35 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     /*Update user information*/
     @Override
-    public UserData updateUserWithPassword(UpdateUserInfo user, Long userId) {
+    public UserData updateUserWithPassword(UpdateUserInfo user, Long userId, String oldEmail) {
         log.info("Updating  user {} to the database", user.getName());
         UserData savedUser = userRepo.getById(userId);
         savedUser.setEmail(user.getEmail());
         savedUser.setName(user.getName());
         savedUser.setPassword(passwordEncoder.encode(user.getNewPassword()));
+
+        /*Update the booking record also*/
+        Query query = new Query(Criteria.where("accountOwnerEmail").is(oldEmail));
+        Update update = new Update();
+        update.set("accountOwnerEmail", user.getEmail());
+        mongoTemplate.updateMulti(query, update, BookingData.class);
+
         return userRepo.save(savedUser);
     }
 
     @Override
-    public UserData updateUserWithoutPassword(UpdateUserInfo user, Long userId) {
+    public UserData updateUserWithoutPassword(UpdateUserInfo user, Long userId, String oldEmail) {
         log.info("Updating  user {} to the database without password updating", user.getName());
         UserData savedUser = userRepo.getById(userId);
         savedUser.setEmail(user.getEmail());
         savedUser.setName(user.getName());
+
+        /*Update the booking record also*/
+        Query query = new Query(Criteria.where("accountOwnerEmail").is(oldEmail));
+        Update update = new Update();
+        update.set("accountOwnerEmail", user.getEmail());
+        mongoTemplate.updateMulti(query, update, BookingData.class);
+
         return userRepo.save(savedUser);
     }
 

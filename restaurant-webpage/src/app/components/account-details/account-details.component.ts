@@ -17,6 +17,7 @@ export class AccountDetailsComponent implements OnInit {
   form!: FormGroup;
   info = false;
   updated = false;
+  wrongPassword = false;
 
   constructor(private accountService: AccountService,
               private authService: AuthService,
@@ -39,6 +40,7 @@ export class AccountDetailsComponent implements OnInit {
   }
 
   updateAccount() {
+    this.wrongPassword = false;
     if (this.form.get('currentPassword')?.value && this.form.get('newPassword')?.value) {
       if (this.form.get('newPassword')?.value &&
         this.form.get('newPassword')?.value != this.form.get('confirmPassword')?.value) {
@@ -46,11 +48,13 @@ export class AccountDetailsComponent implements OnInit {
       } else {
         this.service.updateAccount(this.form.value).then((result: any) => {
           this.updated = result[ 'updated' ] !== 'false';
+          this.wrongPassword = !this.updated;
         })
       }
     }else {
       this.service.updateAccount(this.form.value).then((result: any) => {
         this.updated = result[ 'updated' ] !== 'false';
+        this.wrongPassword = !this.updated;
       })
     }
   }

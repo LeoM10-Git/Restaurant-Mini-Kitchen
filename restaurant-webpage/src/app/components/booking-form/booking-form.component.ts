@@ -50,6 +50,7 @@ export class BookingFormComponent implements OnInit {
       this.bookingSessions = bookingSession;
       this.datePickerConfig.minDate = new Date(bookingSession[0].date);
       this.datePickerConfig.maxDate = new Date(bookingSession[bookingSession.length -1].date);
+
     })
 
     this.form = this.fb.group({
@@ -68,9 +69,12 @@ export class BookingFormComponent implements OnInit {
       this.booking = changes['booking'].currentValue
       /*Reload the session time inside the modal,
       if without this, the selection of session will not show, unless change the time, to load*/
+      const savedDate = this.booking?.date
       if (this.bookingSessions?.length > 0) {
         for ( let bookingSession of this.bookingSessions ) {
-          this.sessions = bookingSession.sessions.filter(session => session.availableTables>0)
+          if (savedDate == bookingSession.date) {
+            this.sessions = bookingSession.sessions.filter(session => session.availableTables>0)
+          }
         }
       }
 

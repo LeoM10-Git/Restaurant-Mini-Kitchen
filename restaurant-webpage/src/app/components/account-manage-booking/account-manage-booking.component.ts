@@ -46,12 +46,10 @@ export class AccountManageBookingComponent implements OnInit {
 
   editBooking(booking: Booking) {
     this.bookingForm = booking
-    console.log(booking)
   }
 
   updateBooking(booking: Booking) {
     this.service.updateBooking(booking).then((response) => {
-      console.log(response)
       /*Because of the modal, need to reload the whole page*/
       this.reloadComponent();
     })

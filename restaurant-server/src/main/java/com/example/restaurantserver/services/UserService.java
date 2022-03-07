@@ -20,7 +20,7 @@ public interface UserService {
 
     List<UserData> getUsers();
 
-    UserData updateUserWithoutPassword(UpdateUserInfo updateUserInfo, Long userId);
+    UserData updateUserWithoutPassword(UpdateUserInfo updateUserInfo, Long userId, String oldEmail);
 
-    UserData updateUserWithPassword(UpdateUserInfo updateUserInfo, Long userId);
+    UserData updateUserWithPassword(UpdateUserInfo updateUserInfo, Long userId, String oldEmail);
 }

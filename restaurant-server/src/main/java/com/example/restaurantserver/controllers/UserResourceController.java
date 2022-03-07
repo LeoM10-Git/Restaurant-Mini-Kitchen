@@ -180,7 +180,7 @@ public class UserResourceController {
             Long userId = userService.getUserByEmail(principal.getName()).getId();
             String currentPassword = updateUserInfo.getCurrentPassword();
             if (passwordEncoder.matches(currentPassword, savedPassword)) {
-                userService.updateUserWithPassword(updateUserInfo, userId);
+                userService.updateUserWithPassword(updateUserInfo, userId, principal.getName());
                 response.put("updated", "true");
             }else {
                 response.put("updated", "false");
@@ -192,7 +192,7 @@ public class UserResourceController {
             userData.setEmail(updateUserInfo.getEmail().toLowerCase());
             log.info("User email %s updated to %s".formatted(principal.getName(),
                     updateUserInfo.getEmail().toLowerCase()));
-            userService.updateUserWithoutPassword(updateUserInfo, userId);
+            userService.updateUserWithoutPassword(updateUserInfo, userId, principal.getName());
             response.put("updated", "true");
         }
         return ResponseEntity.ok(response);

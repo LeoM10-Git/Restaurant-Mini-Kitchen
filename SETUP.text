@@ -3,11 +3,15 @@ database:
      MongoDB, MongoDB Atlas
 
 Environment variables: 
-     SECRET_KEY  // The secret key for jwt token generation, hashed by SHA256
-     MONGODB_PASSWORD   //MongoDB password
-     SQL_PASSWORD   SQL Database password
-     MAIL_PASSWORD      // SMTP email password, using yahoo email
-
+     > SECRET_KEY  // The secret key for jwt token generation, hashed by SHA256
+     > MONGODB_PASSWORD   //MongoDB password
+     > SQL_PASSWORD   SQL Database password
+     > MAIL_PASSWORD      // SMTP email password, using yahoo email
+     > SQL_USERNAME      // SQL Database user name
+     > MONGODB_USERNAME  //MongoDB user name
+     > SERVICE_EMAIL_ADDRESS  //Service email address, email sent from
+     > RESTAURANT_EMAIL_ADDRESS    //Restaurant email address, address to receive message from customer by using contact us service
+     > GOOGLE_SPREADSHEET_ID  //Google spreadsheet id, to store data in google sheet
 Deploy:
      Generate production files from angular folder, copy files into Spring boot static folder
      Push Spring boot folder files to heroku for deployment.
