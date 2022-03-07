@@ -42,7 +42,6 @@ export class AccountDetailsComponent implements OnInit {
     if (this.form.get('currentPassword')?.value && this.form.get('newPassword')?.value) {
       if (this.form.get('newPassword')?.value &&
         this.form.get('newPassword')?.value != this.form.get('confirmPassword')?.value) {
-        console.log('true')
         this.info = true;
       } else {
         this.service.updateAccount(this.form.value).then((result: any) => {

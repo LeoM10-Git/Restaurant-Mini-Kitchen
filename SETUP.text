@@ -3,7 +3,11 @@ database:
      MongoDB, MongoDB Atlas
 
 Environment variables: 
-     SECRET_KEY  : The secret key for jwt token generation
-     MONGODB_PASSWORD
-     SQL_PASSWORD
-     MAIL_PASSWORD
+     SECRET_KEY  // The secret key for jwt token generation, hashed by SHA256
+     MONGODB_PASSWORD   //MongoDB password
+     SQL_PASSWORD   SQL Database password
+     MAIL_PASSWORD      // SMTP email password, using yahoo email
+
+Deploy:
+     Generate production files from angular folder, copy files into Spring boot static folder
+     Push Spring boot folder files to heroku for deployment.

@@ -189,7 +189,9 @@ public class UserResourceController {
             Long userId = userService.getUserByEmail(principal.getName()).getId();
             UserData userData = new UserData();
             userData.setName(updateUserInfo.getName());
-            userData.setEmail(updateUserInfo.getEmail());
+            userData.setEmail(updateUserInfo.getEmail().toLowerCase());
+            log.info("User email %s updated to %s".formatted(principal.getName(),
+                    updateUserInfo.getEmail().toLowerCase()));
             userService.updateUserWithoutPassword(updateUserInfo, userId);
             response.put("updated", "true");
         }
@@ -206,7 +208,7 @@ public class UserResourceController {
     @GetMapping("/user/FAQs")
     public ResponseEntity<List<Faq>> getFAQs() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        List<Faq> FAQs =  mapper.readValue(new File("src/main/resources/static/FAQs.json"),
+        List<Faq> FAQs =  mapper.readValue(new File("src/main/resources/static/FAQ/FAQs.json"),
                 new TypeReference<List<Faq>>(){});
         return ResponseEntity.ok(FAQs);
     }

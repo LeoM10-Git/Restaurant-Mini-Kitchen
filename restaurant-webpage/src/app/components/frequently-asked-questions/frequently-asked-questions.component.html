@@ -3,7 +3,7 @@
     <h1>Frequently Asked Questions</h1>
   </div>
   <div *ngIf="faqs.length > 0">
-  <div class="row mt-3" *ngFor="let faq of faqs; let i=index">
+  <div class="row mt-2" *ngFor="let faq of faqs; let i=index">
     <h3>{{i+1}}. {{faq.question}}</h3>
     <div class="answer">
       <p>{{faq.answer}}</p>

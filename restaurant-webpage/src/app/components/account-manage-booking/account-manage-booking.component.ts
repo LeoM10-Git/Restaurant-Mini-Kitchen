@@ -35,9 +35,7 @@ export class AccountManageBookingComponent implements OnInit {
       this.bookings = bookings
         for (let booking of bookings) {
           if ( new Date(booking.date) < date) {
-            console.log(new Date(booking.date))
             this.historyBookings.push(booking);
-            console.log(booking)
           } else {
             this.activeBookings.push(booking);
           }

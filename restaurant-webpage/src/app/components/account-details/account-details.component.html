@@ -49,12 +49,12 @@
           <input type="password" class="form-control" placeholder="Confirm Password"
           formControlName="confirmPassword">
           <small *ngIf="info">Confirm password is not matching with your new password</small>
-          <small class="updatedDetails" *ngIf="updated">Account details are updated</small>
+          <small class="updatedDetails" *ngIf="updated">Account details are updated, please login again</small>
         </div>
 
 
         <button type="submit" class="btn btn-primary"
-                [disabled]="form.invalid">
+                [disabled]="form.invalid || !(form.get('name')?.dirty || form.get('email')?.dirty)">
           Save Changes
         </button>
       </form>

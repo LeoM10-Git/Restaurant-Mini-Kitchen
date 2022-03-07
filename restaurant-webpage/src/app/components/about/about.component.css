@@ -27,3 +27,9 @@ p {
 .about-container {
   margin-bottom:5rem;
 }
+
+@media (max-width: 600px) {
+  .about-container {
+    text-align: justify;
+  }
+}
